@@ -2,8 +2,6 @@ package com.brunoelinton.crudclients.resources;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,7 +13,7 @@ import com.brunoelinton.crudclients.services.ClientService;
 
 @Controller
 @RequestMapping(value = "/clients")
-public class CategoryResource {
+public class ClientResource {
 	
 	@Autowired
 	private ClientService service;
