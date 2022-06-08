@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.brunoelinton.crudclients.entities.Client;
+import com.brunoelinton.crudclients.dto.ClientDTO;
 import com.brunoelinton.crudclients.services.ClientService;
 
 @Controller
@@ -19,8 +19,8 @@ public class ClientResource {
 	private ClientService service;
 
 	@GetMapping
-	public ResponseEntity<List<Client>> findAll() {
-		List<Client> list = service.findAll();
+	public ResponseEntity<List<ClientDTO>> findAll() {
+		List<ClientDTO> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 }
