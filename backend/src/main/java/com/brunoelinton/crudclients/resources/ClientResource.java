@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.brunoelinton.crudclients.dto.ClientDTO;
@@ -22,5 +23,11 @@ public class ClientResource {
 	public ResponseEntity<List<ClientDTO>> findAll() {
 		List<ClientDTO> list = service.findAll();
 		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<ClientDTO> findById(@PathVariable Long id) {
+		ClientDTO clientDTO = service.findById(id);
+		return ResponseEntity.ok().body(clientDTO);
 	}
 }
